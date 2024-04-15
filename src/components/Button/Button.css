@@ -1,0 +1,100 @@
+.myBtn {
+    all: unset;
+    border-radius: 12px;
+    background: #3E37FC;
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.myBtn .myBtn__label {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    color: #fff;
+}
+.myBtn:not(.default)::-moz-focus-inner {
+    border-style: none;
+}
+
+.myBtn:hover {
+    background: #2C27E5;
+    transition: 150ms;
+}
+.myBtn:active{
+    background: #2923D6;
+    transition: 150ms;
+}
+.myBtn:focus {
+    background: #3E37FC;
+    box-shadow: 0 0 0 2px #C0DDFF;
+    transition: 150ms;
+}
+
+.myBtn.secondary {
+    border-radius: 12px;
+    border: 1px solid #3E37FC;
+    background: #FFFDFD;
+    color: #3E37FC;
+    padding: 12px 32px;
+}
+.myBtn.secondary .myBtn__label {
+    color: #3E37FC;
+    font-size: 32px;
+}
+
+.myBtn.secondary:hover {
+    background: #F5F5F5;
+    .myBtn__label {
+        color: #2C27E5;
+    }
+}
+.myBtn.secondary:active{
+    background: #F0F0F0;
+    .myBtn__label {
+        color: #2923D6;
+    }
+}
+.myBtn.secondary:focus{
+    background: #FFFDFD;
+    box-shadow: 0 0 0 2px #3E37FC;
+    .myBtn__label {
+        color: #3E37FC;
+    }
+}
+.myBtn.navbarBtn {
+    padding: 8px 32px;
+}
+.disabled {
+    background: #d7dceb;
+    color: #696f7d;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    background: #d7dceb;
+}
+@media screen and (max-width: 992px) {
+    .myBtn{
+        padding: 8px 0;
+    }
+    .myBtn.secondary {
+        padding: 8px 0;
+    }
+    .myBtn.secondary .myBtn__label {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .myBtn.secondary .myBtn__label {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .myBtn.secondary .myBtn__label {
+        font-size: 18px;
+    }
+}

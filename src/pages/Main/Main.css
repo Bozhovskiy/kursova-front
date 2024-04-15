@@ -1,0 +1,36 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    margin-top: 50px;
+    min-height: Calc(100vh - 50px);
+}
+
+.trains__card{
+    max-width: Calc(100vw - 200px);
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    place-items: center;
+    gap: 24px;
+}
+.train__card{
+    width: 400px;
+    position: relative;
+    background: #3e37fc;
+    border: 1px solid rgba(62, 55, 252, 0.3);
+    max-width: Calc(33vw - 100px);
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.train__card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}

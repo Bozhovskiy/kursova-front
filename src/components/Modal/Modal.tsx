@@ -28,8 +28,8 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
         <div className="modal">
             <div className="modal__mini">
                 <div className="modal__title">
-                    <h2>Добавлення потягу</h2>
-                    <Button label="x" onClick={closeModal}/>
+                    <h3 style={{color:'#272727'}}>Добавлення потягу</h3>
+                    <Button btnStyle={{paddingLeft:20,paddingRight:20}} label="x" onClick={closeModal}/>
                 </div>
                 <input value={name} placeholder="Назва потягу" onChange={(e) => setName(e.target.value)}/>
                 {new Array(directionsLength).fill('').map((_, index) => (<div className="app_inputs">

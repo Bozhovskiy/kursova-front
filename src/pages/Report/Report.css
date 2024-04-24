@@ -1,0 +1,19 @@
+.train{
+    margin-top: 100px;
+    width: 100vw;
+    min-height: Calc(100vh - 100px);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.reports{
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+}
+.reports h5{
+    border: 1px solid #3E37FC;
+    overflow: hidden;
+}

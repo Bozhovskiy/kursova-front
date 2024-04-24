@@ -2,13 +2,14 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 100px;
-    margin-top: 50px;
-    min-height: Calc(100vh - 50px);
+    padding: 50px;
+    margin-top: 100px;
+    width: 100vw;
+    min-height: Calc(100vh - 100px);
 }
 
 .trains__card{
-    max-width: Calc(100vw - 200px);
+    max-width: Calc(100vw - 100px);
     display: grid;
     width: 100vw;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -33,4 +34,9 @@
 .train__card:hover {
     transform: scale(1.05);
     z-index: 1;
+}
+@media screen and (max-width: 1400px) {
+    .App{
+        padding: 50px;
+    }
 }

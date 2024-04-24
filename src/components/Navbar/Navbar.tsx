@@ -1,16 +1,28 @@
 import './Navbar.css';
 import Button from "../Button/Button";
 import React from "react";
+
 interface INavbar {
-    openModal: ()=>void
-    openModalReport: ()=>void
+    openModal: () => void
+    openModalReport: () => void
 }
-const Navbar: React.FC<INavbar>  = ({openModal,openModalReport}) => {
+
+const Navbar: React.FC<INavbar> = ({openModal, openModalReport}) => {
 
     return (
         <div className="navbar">
-            <Button onClick={openModal} navbar={true} label="Добавити потяг"/>
-            <Button onClick={openModalReport} navbar={true} label="Сформувати звіт"/>
+            <div style={{display:'flex',flexDirection:'row',gap:16}}>
+                <h4 style={{color:'#272727',cursor:'pointer'}} onClick={() => {
+                    window.location.href = '/'
+                }}>Поїзди</h4>
+                <h4 style={{color:'#272727',cursor:'pointer'}} onClick={() => {
+                    window.location.href = '/reports'
+                }}>Звіти</h4>
+            </div>
+            <div style={{display:'flex',flexDirection:'row',gap:16}}>
+                <Button onClick={openModal} navbar={true} label="Добавити потяг"/>
+                <Button onClick={openModalReport} navbar={true} label="Сформувати звіт"/>
+            </div>
         </div>
     );
 }

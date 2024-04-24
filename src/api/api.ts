@@ -76,3 +76,35 @@ export const putCarriage=async (id: string | undefined, type:string,name:string,
         toast.error(error.response.data.message,errorToasterStyles);
     }
 }
+
+export const postReportAPI=async (executorName: string | undefined, trainId: string | undefined, reportDetails: {
+    type: string;
+    direction: string
+}[] | undefined) => {
+    try {
+        const response = await axios.post(url + 'reports',{
+            executorName,trainId,reportDetails
+        });
+        if (response.status !== 200) {
+            toast.error(response.data.message,errorToasterStyles);
+        }
+        else{
+            window.location.href='/reports'
+        }
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const getReports=async () => {
+    try {
+        const response = await axios.get(url + 'reports');
+        if (response.status !== 200) {
+            toast.error('No data');
+        }
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}

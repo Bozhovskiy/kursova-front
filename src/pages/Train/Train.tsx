@@ -145,8 +145,7 @@ function Train() {
                 <Button label="Видалити потяг" btnStyle={{padding:4,borderColor:'#ea5a47'}} btnLabelStyle={{fontWeight:400,color:'#ea5a47',fontSize:16}} secondary={true} onClick={() => {
                     if(train){deleteTrain(train?.id).then()}}}/>
             </h3>
-            <h3 style={{display: "flex", alignItems: 'center', justifyContent: 'center'}}>Назва потягу:
-                <h2>{train?.name}</h2></h3>
+            <h3 style={{display: "flex", alignItems: 'center', justifyContent: 'center'}}>Назва потягу:{train?.name}</h3>
             <h4>Доступні напрямки:{train?.directions.map((direction, index) =>
                 <h5 className="train__directions" key={index}>{direction}</h5>)}</h4>
             <div>

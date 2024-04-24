@@ -46,30 +46,59 @@ function Report() {
         <div className="train">
             <h4>Звіти:
                 <div className="reports">
+                    <h5 className="train__directions">ID</h5>
                     <h5 className="train__directions">ПІБ виконавця</h5>
                     <h5 className="train__directions">Час звіту</h5>
                     <h5 className="train__directions">Id поїзда</h5>
-                    <h5  className="train__directions" style={{display:"flex",flexDirection:"row",width:'100%',alignItems:'center',justifyContent:'center'}}>
-                        <h5 style={{color:'red',border:'none'}}>Тип вагонів [вагони]</h5>-<h5 style={{color:'#008000',border:'none'}}>Пункти призначення</h5>
+                    <h5 className="train__directions" style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        width: '100%',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+                        <h5 style={{color: 'red', border: 'none'}}>Тип вагонів [вагони]</h5>-<h5
+                        style={{color: '#008000', border: 'none'}}>Пункти призначення</h5>
                     </h5>
                 </div>
                 {reports?.map((report, index) =>
-                <div className="reports" key={index}>
-                    <h5>{report.report.executorName}</h5>
-                    <h5>{formatDate(report.report.reportTime)}</h5>
-                    <h5>{report.report.trainId}</h5>
-                    <h5 style={{display:"flex",flexDirection:"column",width:'100%',alignItems:'center',justifyContent:'center'}}>
-                        {report.report.reportDetails.map((detail,index)=>
-                            <h5 style={{display:"flex",flexDirection:"row",width:'100%',alignItems:'center',justifyContent:'center',border:'none'}}>
-                                <h5 style={{color:'red',border:'none',display:'flex',flexDirection:'row'}}>{detail.type}[{report.carriages.map((carriage,index)=>
-                                    carriage.type===detail.type&&<h5 style={{border:'none'}}>{carriage.carriageNumber};</h5>)}]</h5>-<h5 style={{color:'#008000',border:'none'}}>{detail.direction}</h5><br/>
-                        </h5>)}
-                    </h5>
-                </div>
-            )}
+                    <div className="reports" key={index}>
+                        <h5>{index+1}</h5>
+                        <h5>{report.report.executorName}</h5>
+                        <h5>{formatDate(report.report.reportTime)}</h5>
+                        <h5>{report.report.trainId}</h5>
+                        <h5 style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            width: '100%',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            {report.report.reportDetails.map((detail, index) =>
+                                <h5 style={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    width: '100%',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    border: 'none'
+                                }}>
+                                    <h5 style={{
+                                        color: 'red',
+                                        border: 'none',
+                                        display: 'flex',
+                                        flexDirection: 'row'
+                                    }}>{detail.type}[{report.carriages.map((carriage, index) =>
+                                        carriage.type === detail.type &&
+                                        <h5 style={{border: 'none'}}>{carriage.carriageNumber};</h5>)}]</h5>-<h5
+                                    style={{color: '#008000', border: 'none'}}>{detail.direction}</h5><br/>
+                                </h5>)}
+                        </h5>
+                    </div>
+                )}
             </h4>
         </div>
-    );
+ );
 }
 
 export default Report;

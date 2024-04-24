@@ -11,7 +11,7 @@
     margin-left: 50px;
     margin-right: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 4fr 4fr 4fr 8fr;
 }
 .reports h5{
     border: 1px solid #3E37FC;

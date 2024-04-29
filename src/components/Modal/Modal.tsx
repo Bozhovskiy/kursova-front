@@ -59,8 +59,11 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
                         return elem.length >= 0;
                     }) && directions.length > 1) {
                         const data = await postTrain(name, directions).then()
-                        closeModal();
-                        window.location.href = '/train/' + data.id;
+                        console.log(data)
+                        if(data){
+                            closeModal();
+                            window.location.href = '/train/' + data.id;
+                        }
                     } else {
                         toast.error('Заповність усі поля', errorToasterStyles)
                     }

@@ -25,37 +25,11 @@
     justify-content: space-between;
     gap: 8px;
     border: solid 1px #2C27E5;
-    border-bottom: 0;
-    width: 100%;
+    width: 400px;
     min-width: 400px;
 }
-.carriage:last-child{
-    border: solid 1px #2C27E5;
-}
-.carriage h3:first-child{
-    width: 50%;
-    border-right: solid 1px #2C27E5;
-}
-.carriage h3:last-child{
-    width: 50%;
-}
-.train__type,.train__number,.train__name{
-    position: absolute;
-    z-index: 10;
-    width: 400px;
-    text-align: center;
-    font-weight: 700;
-}
-.train__type{
-    bottom: 100px;
-}
-.train__number{
-    right: 50px;
-    width: auto;
-    top: 68px;
-    color: #2C27E5;
-    font-weight: 700;
-}
-.train__name{
-    top: 68px;
+
+input{
+    padding-left: 4px;
+    padding-right: 4px;
 }

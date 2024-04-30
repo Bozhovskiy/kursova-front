@@ -31,7 +31,7 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
                     <h3 style={{color:'#272727'}}>Добавлення потягу</h3>
                     <Button btnStyle={{paddingLeft:20,paddingRight:20}} label="x" onClick={closeModal}/>
                 </div>
-                <input value={name} placeholder="Назва потягу" onChange={(e) => setName(e.target.value)}/>
+                <input value={name} placeholder="ID потягу" onChange={(e) => setName(e.target.value)}/>
                 {new Array(directionsLength).fill('').map((_, index) => (<div className="app_inputs">
                         <input
                             placeholder={`Напрямок №${index + 1}`}
@@ -43,7 +43,7 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
                                 setDirections(newDirections);
                             }}
                         />
-                        <Button onClick={() => removeDirection(index)} label="Видалити напрямок"/>
+                        <Button onClick={() => removeDirection(index)} label="Видалити"/>
                     </div>
                 ))}
                 <Button onClick={() => {
@@ -58,14 +58,19 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
                     if (name.length > 0 && directions.every(function (elem) {
                         return elem.length >= 0;
                     }) && directions.length > 1) {
+                        if(new Set(directions).size === directions.length){
                         const data = await postTrain(name, directions).then()
                         console.log(data)
                         if(data){
                             closeModal();
                             window.location.href = '/train/' + data.id;
                         }
+                        }
+                        else {
+                            toast.error('Усі напрямки повинні бути унікальними.', errorToasterStyles)
+                        }
                     } else {
-                        toast.error('Заповність усі поля', errorToasterStyles)
+                        toast.error('Заповніть усі поля.', errorToasterStyles)
                     }
                 }
                 }/>

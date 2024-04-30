@@ -1,4 +1,4 @@
-import axios, {AxiosError} from 'axios';
+import axios from 'axios';
 import toast from 'react-hot-toast';
 import {errorToasterStyles, successToasterStyles} from "../constants/toaster";
 const url ='http://localhost:8080/'
@@ -51,7 +51,7 @@ export const deleteTrain=async (id:string) => {
     try {
         const response = await axios.delete(url + 'trains/'+id);
         if (response.status !== 200) {
-            toast.error('Не вдалося видалити поїзд',errorToasterStyles);
+            toast.error('Не вдалося видалити потяг',errorToasterStyles);
         }
         else{
             window.location.href='/'
@@ -61,11 +61,11 @@ export const deleteTrain=async (id:string) => {
         console.log(error);
     }
 }
-export const deleteCarriage=async (carriageId:string|undefined,id:string) => {
+export const deleteCarriage=async (carriageId:string|undefined) => {
     try {
         const response = await axios.delete(url +'carriage/'+carriageId);
         if (response.status !== 200) {
-            toast.error('Не вдалося видалити поїзд',errorToasterStyles);
+            toast.error('Не вдалося видалити вагон',errorToasterStyles);
         }
         return response.data;
     } catch (error) {

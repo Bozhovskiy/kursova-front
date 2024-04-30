@@ -19,9 +19,11 @@ const ModalReport: React.FC<IModal> = ({closeModal}) => {
         const fetchData = async () => {
             const data = await getTrains().then();
             setTrains(data);
-            setTrainValue(data[0].id)
-            const typeArray = data[0].directions.map(() => data[0].carriages[0].type);
-            setTypeValue(typeArray)
+            if(data.length>0){
+                setTrainValue(data[0].id)
+                const typeArray = data[0].directions.map(() => data[0].carriages[0].type);
+                setTypeValue(typeArray)
+            }
         }
         fetchData().then( );
     }, []);
@@ -55,14 +57,14 @@ const ModalReport: React.FC<IModal> = ({closeModal}) => {
                     <h3 style={{color:'#272727'}}>Формування звіту</h3>
                     <Button btnStyle={{paddingLeft:20,paddingRight:20}} label="x" onClick={closeModal}/>
                 </div>
-                <h3 style={{color:'#272727'}}>Назва потягу</h3>
-                <select name="Назва потягу"  value={trainValue} onChange={handleChange}>
-                    {trains?.map((train,index)=><option value={train.id}>{train.name}</option>)}
+                <h3 style={{color:'#272727'}}>ID потягу</h3>
+                <select name="ID потягу"  value={trainValue} onChange={handleChange}>
+                    {trains?.map((train,_)=><option value={train.id}>{train.name}</option>)}
                 </select>
-                {trains.find(train => train.id === trainValue)?.directions.map((direction, index) => (
+                {trains.length>0&&trains.find(train => train.id === trainValue)?.directions.map((direction, index) => (
                     <>
                         <h5 style={{color:'#272727'}}>Тип вагону для напрямку {direction}:</h5>
-                        <select key={index} name="Назва потягу" value={typeValue[index]} onChange={(e)=>handleType(e,index)}>
+                        <select key={index} name="Тип вагону" value={typeValue[index]} onChange={(e)=>handleType(e,index)}>
                             {Array.from(new Set(trains.find(train => train.id === trainValue)?.carriages.map(carriage => carriage.type)))
                                 .map((uniqueType, mapIndex) => (
                                     <option key={mapIndex} value={uniqueType}>{uniqueType}</option>

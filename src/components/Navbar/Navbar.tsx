@@ -14,7 +14,7 @@ const Navbar: React.FC<INavbar> = ({openModal, openModalReport}) => {
             <div style={{display:'flex',flexDirection:'row',gap:16}}>
                 <h4 style={{color:'#272727',cursor:'pointer'}} onClick={() => {
                     window.location.href = '/'
-                }}>Поїзди</h4>
+                }}>Потяги</h4>
                 <h4 style={{color:'#272727',cursor:'pointer'}} onClick={() => {
                     window.location.href = '/reports'
                 }}>Звіти</h4>

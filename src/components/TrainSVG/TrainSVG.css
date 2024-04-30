@@ -1,0 +1,28 @@
+.train__type,.train__number,.train__name{
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    text-align: center;
+    font-weight: 700;
+}
+.train__type{
+    bottom: 108px;
+}
+.train__number{
+    right: 100px;
+    width: auto;
+    top: 85px;
+    color: #2C27E5;
+    font-weight: 700;
+}
+.train__name{
+    top: 85px;
+}
+.carriages_svg{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    width: 90vw;
+    place-items: center;
+    justify-content: center;
+    gap: 0;
+}

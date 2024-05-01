@@ -44,7 +44,7 @@ const ModalReport: React.FC<IModal> = ({closeModal}) => {
                 (direction, index) => (
                     {type:typeValue[index],direction }
                 ))
-            postReportAPI(currentTrain?.carriages[0]?.name, trainValue, reportDetails).then()
+            postReportAPI(currentTrain?.carriages[0]?.owner, trainValue, reportDetails).then()
         }
         else{
             toast.error('Кожен напрямок повинен містити унікальний тип.',errorToasterStyles);

@@ -10,4 +10,5 @@ export interface ICarriage {
     id?: string;
     type: string;
     name: string;
+    owner:string;
 }

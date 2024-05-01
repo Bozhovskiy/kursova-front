@@ -1,7 +1,7 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import {errorToasterStyles, successToasterStyles} from "../constants/toaster";
-const url ='http://localhost:8080/'
+const url ='https://kursova-back.onrender.com/'
 export const getTrains=async () => {
     try {
         const response = await axios.get(url + 'trains');

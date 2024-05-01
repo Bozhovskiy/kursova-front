@@ -28,10 +28,14 @@
 
 .first__train__animation {
     animation: firstAnimation 8s infinite;
-    opacity: 1
+    opacity: 1;
+    width:15vw;
+    height:11.25vw;
 }
 
 .second__train__animation {
     animation: secondAnimation 8s infinite;
     transform: scale(0);
+    width:15vw;
+    height:11.25vw;
 }

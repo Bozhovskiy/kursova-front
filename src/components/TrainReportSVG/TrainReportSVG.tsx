@@ -10,10 +10,10 @@ const TrainReportSVG: React.FC<ITrainReportSVG> = ({type}) => {
     const fillColor = types.find((color) => color.name === type);
     return (
         <div style={{width: "15vw", height: "11.25vw", position: 'relative'}}>
-            <svg className="first__train__animation" width="15vw" height="11.25vw" style={{position:'absolute',left:0}} viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <svg className="first__train__animation" style={{position:'absolute',left:0}} viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                 </defs>
-                <g stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
+                <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g transform="translate(3.000000, 0.000000)" fill="#434343">
                         <path d="M1.989,16 L1.011,16 L3.011,0 L3.989,0 L1.989,16 Z">
                         </path>
@@ -32,7 +32,7 @@ const TrainReportSVG: React.FC<ITrainReportSVG> = ({type}) => {
                     </g>
                 </g>
             </svg>
-            <svg className="second__train__animation" width="15vw" height="11.25vw" style={{position:'absolute',left:0}} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+            <svg className="second__train__animation" style={{position:'absolute',left:0}} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M29.3 105.76s-.37 1.11-.38 1.98s.12 2.64 1.68 2.64c2.02 0 24.86-.07 35.87 0s31.28-.14 32.7-.22c1.42-.07 1.03-3.22.94-4.3l-70.81-.1z"
                     fill="#543529">

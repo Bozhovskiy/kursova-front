@@ -6,7 +6,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 .reports{
     display: grid;
@@ -14,6 +13,7 @@
     grid-template-columns: 1fr 3fr 3fr 4fr;
 }
 .reports h5{
+    text-align: center;
     border: 1px solid #3E37FC;
     overflow: hidden;
     border-bottom: none;

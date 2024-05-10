@@ -28,7 +28,7 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
         <div className="modal">
             <div className="modal__mini">
                 <div className="modal__title">
-                    <h3 style={{color:'#272727'}}>Добавлення потягу</h3>
+                    <h3 style={{color:'#272727'}}>Додавання потягу</h3>
                     <Button btnStyle={{paddingLeft:20,paddingRight:20}} label="x" onClick={closeModal}/>
                 </div>
                 <input value={name} placeholder="ID потягу" onChange={(e) => setName(e.target.value)}/>
@@ -53,8 +53,8 @@ const Modal: React.FC<IModal> = ({closeModal}) => {
                         toast.error('Максимальна кількість напрямків: 5', errorToasterStyles)
                     }
                 }
-                } label="Добавити напрямок"/>
-                <Button label="Добавити потяг" secondary={true} onClick={async () => {
+                } label="Додати напрямок"/>
+                <Button label="Додати потяг" secondary={true} onClick={async () => {
                     if (name.length > 0 && directions.every(function (elem) {
                         return elem.length >= 0;
                     }) && directions.length > 1) {

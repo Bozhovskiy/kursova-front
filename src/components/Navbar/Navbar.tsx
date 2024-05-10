@@ -20,7 +20,7 @@ const Navbar: React.FC<INavbar> = ({openModal, openModalReport}) => {
                 }}>Звіти</h4>
             </div>
             <div style={{display:'flex',flexDirection:'row',gap:16}}>
-                <Button onClick={openModal} navbar={true} label="Добавити потяг"/>
+                <Button onClick={openModal} navbar={true} label="Додати потяг"/>
                 <Button onClick={openModalReport} navbar={true} label="Сформувати звіт"/>
             </div>
         </div>

@@ -77,7 +77,7 @@ function Train() {
                         setOwner(e.target.value)
                     }}
                 />
-                <Button label="Добавити вагон" onClick={() => {
+                <Button label="Додати вагон" onClick={() => {
                     if(name.length>0&&type.length>0&&carriageNumber>0&&owner.length>0){
                        putCarriage(train?.id, type, name, carriageNumber,owner).then(() => fetchData().then())
                     }
@@ -87,9 +87,9 @@ function Train() {
                     }
                 }}
                 />
-                <Button label="Добавити пізніше"  btnStyle={{marginBottom:50}} onClick={() => setIsOpen(false)}/>
+                <Button label="Додати пізніше"  btnStyle={{marginBottom:50}} onClick={() => setIsOpen(false)}/>
             </>}
-            {!isOpen && <Button label="Добавити вагон" onClick={() => setIsOpen(true)}  btnStyle={{marginTop:50,marginBottom:50}}/>}
+            {!isOpen && <Button label="Додати вагон" onClick={() => setIsOpen(true)}  btnStyle={{marginTop:50,marginBottom:50}}/>}
         </div>
     );
 }
